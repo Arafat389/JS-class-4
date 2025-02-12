@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        .active{
+            color: green;
+            background-color: tomato;
+            border: 3px dotted black;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <form action="" id="signUpFrom">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" >
+   
+       <br><br>
+    
+       <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <br><br>
+        <button type="submit">Sign Up</button>
+
+    </form> -->
+
+
+    <!-- <h1>Welcome to Dom manipulation</h1>
+    <p class="myPara">Paragraph 1</p>
+    <p class="myPara">Paragraph 2</p>
+    <p class="myPara">Paragraph 3</p>
+    <h1 id="story" class="hello world active">
+        Girgiti
+    </h1> -->
+
+    <!-- html onclick are js on ar porer onso ex: click -->
+    <!-- <button id="mainBtn" onclick="colorChange()">Click me!</button> -->
+    <!-- <button id="mainBtn">Click me!</button> -->
+     
+
+    <h1>My To Do</h1>
+    <form action="" id="todoAddForm">
+        <input type="text" name="Todo" id="todo" placeholder="Enter your text...">
+        <button type="submit">Add</button>
+
+    </form>
+    <ul id="todoList">
+        <li>apple</li>
+        <li>banana</li>
+
+    </ul>
+
+
+    <script>
+
+        //let todoAddForm = document.getElementById("todoAddForm");
+
+        let todoAddForm2 = document.querySelector("#todoAddForm")
+        //let todoAddForm2 = document.querySelector(".todoAddForm")  // class tkakle . 
+        //let todoAddForm2 = document.querySelectorAll(".todoAddForm")  // class tkakle . 
+        //let todoAddForm2 = document.querySelector(".todoAddForm.class2")  // many class tkakle . 
+
+
+        function addTask(e){
+            e.preventDefault();
+           // console.log("task added")
+           let todoInput = document.getElementById("todo")
+           //console.log(todoInput.value)
+           let todoList = document.getElementById("todoList")
+
+           // todoList.innerHTML = todoList.innerHTML + "<li>" + todoInput.value + "</li>"
+
+           let newListItem = document.createElement("li");
+           newListItem.textContent = todoInput.value;
+           todoList.appendChild(newListItem);
+
+           todoInput.value = "";
+
+
+
+        }
+
+        todoAddForm.addEventListener("submit",addTask)
+
+
+
+
+
+
+
+
+
+
+
+        // let signupForm = document.getElementById("signUpFrom")
+
+        // function signUp(event){
+        //     // event.preventDefault(); chis code work page refresh bondo kore
+        //     event.preventDefault();
+        //     let username = document.getElementById("username").value;
+        //     let password = document.getElementById("password").value;
+
+        //     console.log(username,password)
+        // }
+
+        // signupForm.addEventListener("submit", signUp)
+
+
+
+// function colorChange(){
+//          let storyParagraph = document.getElementById("story")
+         //storyParagraph.style.color = "#F0F"
+         //storyParagraph.textContent = "Tiger"
+         //storyParagraph.remove();
+
+         //storyParagraph.classList.add("active");
+         //storyParagraph.classList.remove("active");
+
+         // }
+
+        // addEventListener two parameter 1. ki korle 2. ki goatbe
+        //const myBtn = document.getElementById("mainBtn");
+
+     //html onclick are js on ar porer onso ex: click  and js function name por () hobe na parameter hisabe (event) kaj kore
+
+        // myBtn.addEventListener("click", colorChange)
+
+
+
+
+
+//        let myBtn = document.getElementById('mainBtn');
+//        console.log(myBtn);
+
+//        let myParagraphs = document.getElementsByClassName("myPara");
+//        console.log(myParagraphs);
+//        console.log(document.title)
+//        console.log(document.body)
+
+//    // java script deye kono html text change kora jai
+//        myBtn.textContent = "Click Me Please!";
+
+//        myParagraphs[1].innerHTML = "<h1>Lala</h1><p>Changed</p>"
+//        myParagraphs[2].style.color = "red";
+//        myParagraphs[2].style.backgroundColor = "black"
+         
+        //  function colorChange(){
+        //     let storyParagraph = document.getElementById("story")
+        //     storyParagraph.style.color = "#F0F"
+        //     storyParagraph.textContent = "Tiger"
+
+        //  }
+
+
+    </script>
+    
+</body>
+</html>
